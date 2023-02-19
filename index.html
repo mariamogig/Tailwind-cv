@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="HelveticaNeue.ttc">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+          theme: {
+            screens: {
+                sm: '480px',
+                md: '768px',
+                lg: '976px',
+                xl: '1440px'
+            },
+            extend: {
+              margin: {
+                 '70px': '70px',
+             },
+              colors: {
+                clifford: '#da373d',
+              }
+            }
+          }
+        }
+      </script>
+</head>
+<body class="font-HelveNeue h-screen w-screen">
+    <div>
+        <div class="mt-6 mx-70px">
+            <img src="images/logo.svg" alt="">
+            <div class="mx-70 w-auto border border-black"></div>
+        </div>
+        <div class="w-screen flex items-center justify-center h-screen">
+            <button class="w-96 rounded-md text-white bg-black h-16 "> <a href="personal-info.html"> რეზიუმეს დამატება</a> </button>
+        </div>
+    </div>     
+</body>
+</html>
