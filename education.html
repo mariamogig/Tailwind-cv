@@ -32,17 +32,41 @@
       </script>
 </head>
 <body class="h-screen">
-    <div class="left bg-gray-300 w-2/4 h-full">
+    <div class="left bg-gray-100 w-2/4 h-full">
         <div class="section1 flex mr-40 pt-12">
-            <div>
+            <div class="w-36">
                 <div class="bg-white h-10 w-10 rounded-full ml-12 flex justify-center items-center">
                     <img src="images/vector.png" alt="">
                 </div>
             </div>
-            <div class="flex ml-5 justify-between max-w-3xl w-full">
-                <h1>განათლება</h1>
+            <div class="flex justify-between max-w-3xl w-full">
+                <h1 class="ml-5">განათლება</h1>
                 <span>3/3</span>
             </div>
+        </div>
+        <div class="border border-black mx-36"></div>
+        <div class="section2 mx-36 my-12">
+            <div>
+                <label class="block" for="university">სასწავლებელი</label>
+                <input class="border-2 rounded w-full my-2 h-48 border-gray-200" id="univeristy" name="univeristy" type="text">
+                <span class="block">მინიმუმ 2 სიმბოლო</span>
+            </div>
+            <div class="flex justify-between w-full mt-8 flex-wrap">
+                <div>
+                    <label class="block" for="degree">ხარისხი</label>
+                    <select class="lg:w-72 sm:w-44 h-48 border-2 rounded my-2 border-gray-200" name="degree" id="degree">
+                        <option selected value="აირჩიე">აირჩიე ხარისხი</option>
+                        <option value="bachelor">ბაკალავრი</option>
+                        <option value="masters">მაგისტრი</option>
+                        <option value="nothing">უსწავლელა</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block" for="endDate">დამთავრების რიცხვი</label>
+                    <input class="lg:w-72 sm:w-44 h-48 border-2 rounded my-2 border-gray-200" type="date" id="endDate" name="endDate">
+                </div>
+            </div>
+            
         </div>
     </div>
     <div class="right"></div>
