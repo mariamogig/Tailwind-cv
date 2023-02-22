@@ -31,21 +31,23 @@
         }
       </script>
 </head>
-<body>
-    <div class="left bg-gray-100 w-2/4 h-screen">
+<body class="h-screen font-HelveNeue m-0">
+    <div class="left bg-gray-100 w-2/4 h-screen h-full">
         <div class="pt-12 flex mr-40">
-            <div class="w-36">
-                <div class="ml-12 rounded-full bg-white w-10 h-10 flex justify-center items-center">
-                    <img src="images/vector.png" alt="arrows">
-                </div>
+            <div class="w-36"> 
+                <a href="index.html">
+                    <div class="ml-12 rounded-full bg-white w-10 h-10 flex justify-center items-center">
+                        <img src="images/vector.png" alt="arrows">
+                    </div>
+                </a>
             </div>
-            <div class="flex justify-between max-w-3xl w-full">
-                <h1 class="ml-5">გამოცდილება</h1>                
+            <div class="flex justify-between w-full">
+                <h1 class="ml-5 text-2xl font-bold text-2xl">გამოცდილება</h1>                
                 <span>2/3</span>
             </div>
         </div>
         <div class="border-black border mx-36"></div>
-        <form class="mx-36" action="">
+        <form class="mx-36 mt-16" action="">
             <div class="mt-20">
                 <label class="block font-semibold" for="position">თანამდებობა</label>
                 <input class="block pl-2 my-2 w-full h-48 border-2 rounded border-gray-200" type="text" id="position" name="position" placeholder="დეველოპერი,დიზაინერი,ა.შ">
@@ -67,8 +69,8 @@
                 </div>
             </div>
             <div class="mt-8">
-                <label class="block" for="position">აღწერა</label>
-                <input class="rounded block pl-2 my-2 w-full h-48 border-2 border-gray-200" type="text" id="position" name="position" placeholder="როლი თამნამდებობაზე და ზოგადი აღწერა">
+                <label class="block font-semibold" for="position">აღწერა</label>
+                <textarea class="resize-none rounded block pl-2 my-2 w-full h-24 border-2 border-gray-200" name="position" placeholder="როლი თამნამდებობაზე და ზოგადი აღწერა" id="position" cols="30" rows="10"></textarea>
             </div>
             <div class="border border-3 border-gray-300 w-auto my-12"></div>
             <button type="button" class="text-white  bg-sky-500 lg:w-72 lg:h-12 sm:w-36 sm:h-24 rounded">მეტი გამოცდილების დამატება</button>
