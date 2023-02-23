@@ -17,6 +17,9 @@
                 xl: '1440px'
             },
             extend: {
+              backgroundImage: {
+                 'colors': "url('../images/background.png')",
+             },
               margin: {
                  '70px': '70px',
              },
@@ -29,12 +32,12 @@
       </script>
 </head>
 <body class="font-HelveNeue h-screen w-screen">
-    <div>
+    <div class="bg-colors border border-white bg-cover bg-fixed bg-center bg-no-repeat">
         <div class="mt-6 mx-70px">
-            <img src="images/logo.svg" alt="">
+            <img class="mb-6" src="images/logo.svg" alt="">
             <div class="mx-70 w-auto border border-black"></div>
         </div>
-        <div class="w-screen flex items-center justify-center h-screen">
+        <div class="w-screen h-full flex items-center justify-center h-screen">
             <button class="w-96 rounded-md text-white bg-black h-16 "> <a href="personal-info.html"> რეზიუმეს დამატება</a> </button>
         </div>
     </div>     
