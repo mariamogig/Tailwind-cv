@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Experience</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="script.js"></script>
     <script>
         tailwind.config = {
           theme: {
@@ -51,27 +52,29 @@
             <form class="mx-36 mt-16" action="">
                 <div class="mt-20">
                     <label class="block font-semibold" for="position">თანამდებობა</label>
-                    <input class="block pl-2 my-2 w-full h-48 border-2 rounded border-gray-200" type="text" id="position" name="position" placeholder="დეველოპერი,დიზაინერი,ა.შ">
+                    <input onkeyup="handleInput(this,'position')" class="block pl-2 my-2 w-full h-48 border-2 rounded border-gray-200" type="text" id="position" name="position" placeholder="დეველოპერი,დიზაინერი,ა.შ">
                     <span>მინიმუმ 2 სიმბოლო</span>
                 </div>
                 <div class="mt-6">
-                    <label class="block font-semibold" for="position">დამსაქმებელი</label>
-                    <input class="block pl-2 my-2 w-full h-48 border-2 rounded border-gray-200" type="text" id="position" name="position" placeholder="დამსაქმებელი">
+                    <label class="block font-semibold" for="company">დამსაქმებელი</label>
+                    <input onkeyup="handleInput(this,'company')" class="block pl-2 my-2 w-full h-48 border-2 rounded border-gray-200" type="text" id="company" name="company" placeholder="დამსაქმებელი">
                     <span>მინიმუმ 2 სიმბოლო</span>
                 </div>
                 <div class="flex justify-between flex-wrap mt-6">
                     <div>
                         <label class="font-semibold block" for="startDate"> დაწყების რიცხვი</label>
-                        <input class="rounded lg:w-72 sm:w-44 h-48 my-2 border-2" type="date" name="date" id="startDate">
+                        <input onchange="handleInput(this,'startDate')" class="rounded lg:w-72 sm:w-44 h-48 my-2 border-2" type="date" name="date" id="startDate">
+                        <img class="inline-block" src="images/error.svg" alt="error">
                     </div>
                     <div>
                         <label class="font-semibold block" for="endDate">დამთავრების რიცხვი</label>
-                        <input class="rounded h-48 my-2 border-2 lg:w-72 sm:w-44" type="date" name="date" id="endDate">
+                        <input onchange="handleInput(this,'endDate')" class="rounded h-48 my-2 border-2 lg:w-72 sm:w-44" type="date" name="date" id="endDate">
+                        <img class="inline-block" src="images/error.svg" alt="error">
                     </div>
                 </div>
                 <div class="mt-8">
-                    <label class="block font-semibold" for="position">აღწერა</label>
-                    <textarea class="resize-none rounded block pl-2 my-2 w-full h-24 border-2 border-gray-200" name="position" placeholder="როლი თამნამდებობაზე და ზოგადი აღწერა" id="position" cols="30" rows="10"></textarea>
+                    <label class="block font-semibold" for="description">აღწერა</label>
+                    <textarea onkeyup="handleInput(this, 'description')" class="resize-none rounded block pl-2 my-2 w-full h-24 border-2 border-gray-200" name="description" placeholder="როლი თამნამდებობაზე და ზოგადი აღწერა" id="description" cols="30" rows="10"></textarea>
                 </div>
                 <div class="border border-3 border-gray-300 w-auto my-12"></div>
                 <button type="button" class="text-white  bg-sky-500 lg:w-72 lg:h-12 sm:w-36 sm:h-24 rounded">მეტი გამოცდილების დამატება</button>
@@ -84,17 +87,17 @@
         <div class="right border w-2/4">
             <div class="mt-20 flex mx-36 justify-between">
               <div>
-                <h1 class="text-3xl font-bold mb-4">მარიამ გიგაური</h1>
+                <h1 class="text-3xl font-bold mb-4"> </h1>
                 <div class="flex mb-2">
                   <img class="h-6 w-6" src="images/mail.svg" alt="mail">
-                  <span>mmm@redberry.ge</span>
+                  <span></span>
                 </div>
                 <div class="flex mb-4">
                   <img src="images/phone.svg" alt="phone">
-                  <span>+99559816655</span>
+                  <span></span>
                 </div>
                 <h1 class="text-2xl font-bold mb-4">ჩემს შესახებ</h1>
-                <p>კაი გოგო მარიამი</p>
+                <p></p>
               </div>
               <div class="">
                 <img class="rounded-full w-56 h-56 object-cover" src="images/anzor.jpg" alt="anzorpicture">
@@ -104,14 +107,14 @@
             <div class="mx-36">
               <h1 class="text-2xl font-bold mb-4">გამოცდილება</h1>
               <div class="flex mb-2">
-                <span>React developer,</span>
-                <span>microsoft</span>
+                <span id="positionResult" class="mr-2"></span>
+                <span id="companyResult"></span>
               </div>
               <div class="flex mb-4">
-                <span>23/05</span>
-                <span>-24/05.2023</span>
+                <span id="startDateResult" class="mr-2"></span>
+                <span id="endDateResult"></span>
               </div>
-              <p>ლორემ იპსუმ მმოიტა წამოსასხამი სდევდა მხეცის მიცოცებულიყო მეშინიან დენევის გვიამბეს ახლადჩაწერილ, ვნერვიულობ, დავკითხავთ ნასოფ კნეინობისა შვეიცარიისკენ შევიფარო. აუტის ხუვებით ჩააბარა მიავლო არტურზე ავტორიტეტების მევე დაბრუნდებოდე სულგრძელიო. დაჰყეფსო ყვირილზედ ერთდებოდნენ მხიარულ დედიშენის, სულგრძელიო შენს გადამევლო ჩაჰბარდა ჩააბარა ადით გადაზნექილი. წარმოუდგენლად სუფრისა შეაშროს ადით ყვირილზედ მთვარესთან ნასოფ მჭახე დედიშენის დაუძლურებული ბესოს.</p>
+              <p id="descriptionResult"></p>
             </div>
             <div class="mx-36 my-10 border border-gray-300"></div>
           </div>

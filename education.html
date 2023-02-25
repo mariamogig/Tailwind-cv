@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>განათლება</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="script.js"></script>
     <script>
         tailwind.config = {
           theme: {
@@ -51,27 +52,29 @@
                 <form class="mx-36 mt-16" action="">
                 <div>
                     <label class="font-semibold block" for="university">სასწავლებელი</label>
-                    <input class="border-2 rounded w-full my-2 h-48 border-gray-200" id="univeristy" name="univeristy" type="text">
+                    <input onkeyup="handleInput(this,'university')" class="border-2 rounded w-full my-2 h-48 border-gray-200" id="university" name="university" type="text">
                     <span class="block">მინიმუმ 2 სიმბოლო</span>
                 </div>
                 <div class="flex justify-between w-full mt-8 flex-wrap">
                     <div>
                         <label class="block font-semibold" for="degree">ხარისხი</label>
-                        <select class="lg:w-72 sm:w-44 h-48 border-2 rounded my-2 border-gray-200" name="degree" id="degree">
-                            <option selected value="აირჩიე">აირჩიე ხარისხი</option>
+                        <select onchange="handleInput(this,'degree')" class="lg:w-72 sm:w-44 h-48 border-2 rounded my-2 border-gray-200" name="degree" id="degree">
+                            <option selected value="">აირჩიე ხარისხი</option>
                             <option value="bachelor">ბაკალავრი</option>
                             <option value="masters">მაგისტრი</option>
                             <option value="nothing">უსწავლელა</option>
                         </select>
+                        <img class="inline-block" src="images/error.svg" alt="error">
                     </div>
                     <div>
                         <label class="block font-semibold" for="endDate">დამთავრების რიცხვი</label>
-                        <input class="lg:w-72 sm:w-44 h-48 border-2 rounded my-2 border-gray-200" type="date" id="endDate" name="endDate">
+                        <input onchange="handleInput(this,'date')" class="lg:w-72 sm:w-44 h-48 border-2 rounded my-2 border-gray-200" type="date" id="date" name="date">
+                        <img class="inline-block" src="images/error.svg" alt="error">
                     </div>
                 </div>
                 <div class="mt-8">
-                    <label class="block font-semibold" for="education">აღწერა</label>
-                    <textarea class="resize-none rounded block pl-2 my-2 w-full h-24 border-2 border-gray-200" name="education" placeholder="როლი თამნამდებობაზე და ზოგადი აღწერა" id="education"></textarea>
+                    <label class="block font-semibold" for="moreInfo">აღწერა</label>
+                    <textarea onkeyup="handleInput(this,'moreInfo')" class="resize-none rounded block pl-2 my-2 w-full h-24 border-2 border-gray-200" name="moreInfo" placeholder="როლი თამნამდებობაზე და ზოგადი აღწერა" id="moreInfo"></textarea>
                 </div>
                 <div class="border border-gray-300 my-12 w-full"></div>
                 <button type="button" class="text-white  bg-sky-500 lg:w-72 lg:h-12 sm:w-36 sm:h-24 rounded"> სხვა სასწავლებლის დამატება</button>
@@ -84,17 +87,17 @@
         <div class="right border w-2/4">
             <div class="mt-20 flex mx-36 justify-between">
               <div>
-                <h1 class="text-3xl font-bold mb-4">მარიამ გიგაური</h1>
+                <h1 class="text-3xl font-bold mb-4"></h1>
                 <div class="flex mb-2">
                   <img class="h-6 w-6" src="images/mail.svg" alt="mail">
-                  <span>mmm@redberry.ge</span>
+                  <span></span>
                 </div>
                 <div class="flex mb-4">
                   <img src="images/phone.svg" alt="phone">
-                  <span>+99559816655</span>
+                  <span></span>
                 </div>
                 <h1 class="text-2xl font-bold mb-4">ჩემს შესახებ</h1>
-                <p>კაი გოგო მარიამი</p>
+                <p></p>
               </div>
               <div class="">
                 <img class="rounded-full w-56 h-56 object-cover" src="images/anzor.jpg" alt="anzorpicture">
@@ -104,25 +107,25 @@
             <div class="mx-36">
               <h1 class="text-2xl font-bold mb-4">გამოცდილება</h1>
               <div class="flex mb-2 font-semibold">
-                <span>React developer,</span>
-                <span>microsoft</span>
+                <span></span>
+                <span></span>
               </div>
               <div class="flex mb-4">
-                <span class="text-gray-500"><em>24/05.2023</em></span>
-                <span class="text-gray-500"><em>-24/05.2023</em></span>
+                <span class="text-gray-500"><em></em></span>
+                <span class="text-gray-500"><em></em></span>
               </div>
-              <p>ლორემ იპსუმ მმოიტა წამოსასხამი სდევდა მხეცის მიცოცებულიყო მეშინიან დენევის გვიამბეს ახლადჩაწერილ, ვნერვიულობ, დავკითხავთ ნასოფ კნეინობისა შვეიცარიისკენ შევიფარო. აუტის ხუვებით ჩააბარა მიავლო არტურზე ავტორიტეტების მევე დაბრუნდებოდე სულგრძელიო. დაჰყეფსო ყვირილზედ ერთდებოდნენ მხიარულ დედიშენის, სულგრძელიო შენს გადამევლო ჩაჰბარდა ჩააბარა ადით გადაზნექილი. წარმოუდგენლად სუფრისა შეაშროს ადით ყვირილზედ მთვარესთან ნასოფ მჭახე დედიშენის დაუძლურებული ბესოს.</p>
+              <p></p>
             </div>
             <div class="mx-36 my-10 border border-gray-300"></div>
             <div class="mx-36">
                 <h2 class="text-2xl font-bold mb-4">განათლება</h2>
                 <div class="flex mb-2 font-semibold">
-                    <span>ილიაუნი</span>
+                    <span id="universityResult"></span>
                     <span>,</span>
-                    <span>სტუდენტი</span>
+                    <span id="degreeResult"></span>
                 </div>
-                <span class="text-gray-500"><em>24.05.2023</em></span>
-                <p class="mt-4">ნეინობისა შვეიცარიისკენ შევიფარო. აუტის ხუვებით ჩააბარა მიავლო არტურზე ავტორიტეტების მევე დაბრუნდებოდე სულგრძელიო. დაჰყეფსო ყვირილზედ ერთდებოდნენ მხიარულ დედიშენის, სულგრძელიო შენს გადამევლო ჩაჰბარდა ჩააბარა ადით გადაზნექილი. წარმოუდგენლად სუფრისა შეაშროს ადით ყვირილზედ მთვარესთან ნასოფ მჭახე დედიშენის დაუძლურებული ბესოს</p>
+                <span id="dateResult" class="text-gray-500"><em></em></span>
+                <p id="moreInfoResult" class="mt-4"></p>
             </div>
           </div>
     </div>
